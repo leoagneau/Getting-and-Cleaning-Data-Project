@@ -66,5 +66,5 @@ run_analysis <- function() {
   ms_table[, Subject:=merge_sbjs]
   ms_molten <- melt(ms_table, id=c("Activity", "Subject"))
   tidy_set <- dcast(ms_molten, Activity + Subject ~ variable, mean)
-  write.table(tidy_set, "tidy_set.txt")
+  write.table(tidy_set, "tidy_set.txt", row.names=F)
 }
